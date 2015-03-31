@@ -9,7 +9,8 @@ gulp.task('default', function() {
 gulp.task('sass', function () {
     gulp.src('./app/scss/style.scss')
         .pipe(sass())
-        .pipe(gulp.dest('./app/style/css'));
+        .pipe(gulp.dest('./app/style/css'))
+        .pipe(reload({ stream:true }));
 });
 // watch files for changes and reload
 gulp.task('serve', function() {
@@ -19,5 +20,5 @@ gulp.task('serve', function() {
         }
     });
     gulp.watch('./app/scss/*.scss', ['sass']);
-    gulp.watch(['*.html', 'styles/**/*.css', 'scripts/**/*.js','./app/scss/*.scss'], {cwd: 'app'}, reload);
+    gulp.watch(['*.html', 'styles/**/*.css', 'scripts/**/*.js'], {cwd: 'app'}, reload);
 });
