@@ -19,6 +19,6 @@ gulp.task('serve', function() {
             baseDir: 'app'
         }
     });
-    gulp.watch('./app/scss/*.scss', ['sass']);
+    gulp.watch(['./app/scss/*.scss','./app/partials/*.scss'], ['sass']);
     gulp.watch(['*.html', 'styles/**/*.css', 'scripts/**/*.js'], {cwd: 'app'}, reload);
 });

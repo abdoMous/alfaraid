@@ -10,7 +10,7 @@ jQuery(document).ready(function($){
 			$('body,html').animate({'scrollTop': $('#cd-product-tour').offset().top - 30 }, 200); 
 		} else {
 			$('.cd-main-content').addClass('is-product-tour');
-			uploadVideo(jQuery('.cd-active'));
+			//uploadVideo(jQuery('.cd-active'));
 		}
 	});
 
@@ -112,47 +112,47 @@ jQuery(document).ready(function($){
 		$('.cd-loader').stop().hide().css('width', 0);
 	}
 
-	function uploadVideo(selected) {
-		selected.siblings('.cd-single-item').find('video').each(function(){
-			//pause videos user is not watching
-			$(this).get(0).pause();
-		})
-		if(selected.find('video').length > 0) {
-			//video has been already loaded - play it
-			selected.find('video').eq(0).show().get(0).play();
-		} else {
-			//load video - the name of the video is the data-video of the image
-			var videoUrl = selected.find('.cd-image-container img').data('video'),
-				video = $('<video loop><source src="'+videoUrl+'.mp4" type="video/mp4" /><source src="'+videoUrl+'.webm" type="video/webm" />Sorry, your browser does not support HTML5 video.</video>');
-			video.appendTo(selected.find('.cd-image-wrapper')).hide();
-
-			var loaded = 'false';
-			//check if the canplaythrough event occurs - video is ready to be played
-			selected.on('canplaythrough', 'video', function() {
-				loaded = 'true';
-			});
-
-			//animate the loading bar
-			$('.cd-loader').show().animate({width: '50%'}, 1500, function(){
-				var timeout = setInterval(function(){
-					if( loaded ){
-						//this means the video is ready - complete .cd-loader and play the video
-						$('.cd-loader').animate({width: '100%'}, 100, function(){
-							$('.cd-loader').css('width', 0);
-							selected.find('video').show().get(0).play();
-							selected.find('img').css('opacity', 0);
-							clearInterval(timeout);
-						});
-					} else {
-						//video is not ready yet
-						var windowWidth = $(window).width(),
-							widthNew = $('.cd-loader').width() + 10;
-						if(widthNew < windowWidth ) {
-							$('.cd-loader').show().animate({width: widthNew+'px'}, 500);
-						}
-					}
-				}, 500);
-			});			
-		}
-	}
+	//function uploadVideo(selected) {
+	//	selected.siblings('.cd-single-item').find('video').each(function(){
+	//		//pause videos user is not watching
+	//		$(this).get(0).pause();
+	//	})
+	//	if(selected.find('video').length > 0) {
+	//		//video has been already loaded - play it
+	//		selected.find('video').eq(0).show().get(0).play();
+	//	} else {
+	//		//load video - the name of the video is the data-video of the image
+	//		var videoUrl = selected.find('.cd-image-container img').data('video'),
+	//			video = $('<video loop><source src="'+videoUrl+'.mp4" type="video/mp4" /><source src="'+videoUrl+'.webm" type="video/webm" />Sorry, your browser does not support HTML5 video.</video>');
+	//		video.appendTo(selected.find('.cd-image-wrapper')).hide();
+    //
+	//		var loaded = 'false';
+	//		//check if the canplaythrough event occurs - video is ready to be played
+	//		selected.on('canplaythrough', 'video', function() {
+	//			loaded = 'true';
+	//		});
+    //
+	//		//animate the loading bar
+	//		$('.cd-loader').show().animate({width: '50%'}, 1500, function(){
+	//			var timeout = setInterval(function(){
+	//				if( loaded ){
+	//					//this means the video is ready - complete .cd-loader and play the video
+	//					$('.cd-loader').animate({width: '100%'}, 100, function(){
+	//						$('.cd-loader').css('width', 0);
+	//						selected.find('video').show().get(0).play();
+	//						selected.find('img').css('opacity', 0);
+	//						clearInterval(timeout);
+	//					});
+	//				} else {
+	//					//video is not ready yet
+	//					var windowWidth = $(window).width(),
+	//						widthNew = $('.cd-loader').width() + 10;
+	//					if(widthNew < windowWidth ) {
+	//						$('.cd-loader').show().animate({width: widthNew+'px'}, 500);
+	//					}
+	//				}
+	//			}, 500);
+	//		});
+	//	}
+	//}
 });
