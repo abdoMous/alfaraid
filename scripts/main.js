@@ -103,7 +103,7 @@ jQuery(document).ready(function($){
 		//update slider navigation (in case we reached the last slider)
         updateSliderNav(selected);
         //load the video for the new slider
-		uploadVideo(selected);
+		//uploadVideo(selected);
 
 	}
 
