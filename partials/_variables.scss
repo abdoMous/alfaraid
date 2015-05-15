@@ -1,18 +1,18 @@
 // colors
 
-$color-1: #2980B9;//#3f435f; // dark purple
-$color-2: #E74C3C;//#f58780; // salmon
-$color-3: #f8f8f8;//#ffffff; // white
+$color-1: #3498DB;//#2980B9;//#3f435f; // dark purple
+$color-2: #f58780; // salmon
+$color-3: #ffffff; // white
 
 $header-height-S: 50px;
 $header-height-L: 90px;
 
 @font-face {
-  font-family: 'Cocon-Light';
+  font-family: 'NotoKufiArabic-Regular';
   /*a name to be used later*/
-  src: url('Cocon-Light.otf');
+  src: url('NotoKufiArabic-Regular.ttf');
   /*URL to font*/ }
 
 // fonts 
 
-$primary-font: 'Cocon-Light', sans-serif;
+$primary-font: 'NotoKufiArabic-Regular', sans-serif;
