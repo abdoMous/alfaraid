@@ -1,7 +1,7 @@
 @font-face {
-  font-family: 'Cocon-Light';
+  font-family: 'NotoKufiArabic-Regular';
   /*a name to be used later*/
-  src: url('Cocon-Light.otf');
+  src: url('NotoKufiArabic-Regular.ttf');
   /*URL to font*/ }
 
 /* -------------------------------- 
@@ -23,19 +23,27 @@ html * {
 
 body {
   font-size: 100%;
-  font-family: 'Cocon-Light', sans-serif;
-  color: #94c6e7;
-  background-color: #2980B9; }
+  font-family: 'NotoKufiArabic-Regular', sans-serif;
+  color: #b6daf2;
+  background-color: #3498DB; }
 
 a {
-  color: #E74C3C;
+  color: #f58780;
   text-decoration: none; }
 
 img {
   max-width: 100%; }
 
 h1, h2 {
-  color: #f8f8f8; }
+  color: #ffffff; }
+
+.cd-caption ul {
+  list-style-type: decimal;
+  direction: rtl; }
+
+.cd-caption li {
+  direction: rtl;
+  line-height: 1.6; }
 
 /* -------------------------------- 
 
@@ -49,18 +57,18 @@ Modules - reusable parts of our design
   font-weight: bold;
   font-size: 12px;
   font-size: 0.75rem;
-  color: #f8f8f8;
-  background-color: #6ab0de;
+  color: #ffffff;
+  background-color: #8bc4ea;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2);
   -webkit-transition: background-color .2s;
   -moz-transition: background-color .2s;
   transition: background-color .2s; }
   .no-touch .btn:hover {
-    background-color: #7fbbe3; }
+    background-color: #a0cfee; }
   .btn.salmon {
-    background-color: #E74C3C; }
+    background-color: #f58780; }
   .no-touch .btn.salmon:hover {
-    background-color: #ea6153; }
+    background-color: #f79d98; }
   @media only screen and (min-width: 1070px) {
     .btn {
       font-size: 20px;
@@ -73,7 +81,8 @@ Main components
 -------------------------------- */
 html, body {
   /* important for .cd-main-content 100% height to work */
-  height: 100%; }
+  height: 100%;
+  direction: rtl; }
 
 .cd-header {
   position: fixed;
@@ -82,7 +91,7 @@ html, body {
   z-index: 3;
   width: 100%;
   height: 50px;
-  background-color: #20638f;
+  background-color: #217dbb;
   overflow: hidden;
   /* Force Hardware Acceleration in WebKit */
   -webkit-transform: translateZ(0);
@@ -269,7 +278,7 @@ html, body {
   padding: 50px 5% 120px;
   width: 100%;
   text-align: center;
-  border-top: 1px solid #2e8ece; }
+  border-top: 1px solid #4aa3df; }
   .cd-single-item h2 {
     text-align: right;
     margin-bottom: 15px;
@@ -429,7 +438,7 @@ html, body {
   left: -10px;
   width: 100%;
   height: 100%;
-  border-color: #226998;
+  border-color: #2383c4;
   border-style: solid;
   border-width: 45px 10px;
   border-radius: 2.5em;
@@ -447,7 +456,7 @@ html, body {
     transform: translateX(-50%);
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    background-color: #1b557a;
+    background-color: #1d6fa5;
     border-radius: 50%; }
   .cd-phone-frame::before {
     height: 11px;
@@ -486,9 +495,9 @@ html, body {
     text-indent: 100%;
     white-space: nowrap;
     color: transparent;
-    background: #2472a4; }
+    background: #258cd1; }
     .no-touch .cd-slider-nav a:hover {
-      background: #226998; }
+      background: #2383c4; }
     .cd-slider-nav a::before {
       /*this is the bacgrounf arrow - we have been used a before element to change the opacity on hover*/
       position: absolute;
@@ -513,7 +522,7 @@ html, body {
     .no-touch .cd-slider-nav a:hover::before {
       opacity: 1; }
   .cd-slider-nav .cd-prev {
-    border-left: 1px solid #2980B9; }
+    border-left: 1px solid #3498DB; }
   .cd-slider-nav .cd-prev::before {
     -webkit-transform: translateX(-50%) translateY(-50%) rotate(180deg);
     -moz-transform: translateX(-50%) translateY(-50%) rotate(180deg);
@@ -549,5 +558,5 @@ html, body {
   left: 0;
   height: 3px;
   width: 0;
-  background-color: #E74C3C;
+  background-color: #f58780;
   display: none; }
